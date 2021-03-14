@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 声明对象 -->
+    <bean id="mysqlDao" class="com.Sample.dao.impl.UserDaoImpl"/>
+    <bean id="OracleDao" class="com.Sample.dao.impl.OracleDaoImpl"/>
+
+    <!--声明service对象-->
+    <bean id="userService" class="com.Sample.service.impl.UserServiceImpl">
+        <property name="dao" ref="OracleDao"/>
+    </bean>
+
+
+
+
+
+
+
+</beans>

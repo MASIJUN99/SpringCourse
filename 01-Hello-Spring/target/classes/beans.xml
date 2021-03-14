@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 用bean创建对象 -->
+    <bean id = "someService" class = "com.Sample.service.impl.SomeServiceImpl"/>
+    <bean id = "someService1" class = "com.Sample.service.impl.SomeServiceImpl" scope="prototype"/>
+
+    <!-- spring创建一个非自定义类的对象，创建一个存在的某个类的对象 -->
+    <bean id = "mydate" class = "java.util.Date"/>
+
+</beans>
