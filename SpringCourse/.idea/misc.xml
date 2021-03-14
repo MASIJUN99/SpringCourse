@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/../01-Hello-Spring/pom.xml" />
+        <option value="$PROJECT_DIR$/../02-di-xml/pom.xml" />
+        <option value="$PROJECT_DIR$/../03-homework/pom.xml" />
         <option value="$PROJECT_DIR$/../04-di-anno/pom.xml" />
       </list>
     </option>

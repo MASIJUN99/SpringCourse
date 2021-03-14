@@ -20,12 +20,23 @@
             <version>5.3.4</version>
         </dependency>
 
+        <!-- 实际上 context 包含 aop -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>5.3.4</version>
+        </dependency>
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.13</version>
             <scope>test</scope>
         </dependency>
+
+
     </dependencies>
+
+
 
 </project>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../01-Hello-Spring/01-Hello-Spring.iml" filepath="$PROJECT_DIR$/../01-Hello-Spring/01-Hello-Spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../02-di-xml/02-di-xml.iml" filepath="$PROJECT_DIR$/../02-di-xml/02-di-xml.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../03-homework/03-homework.iml" filepath="$PROJECT_DIR$/../03-homework/03-homework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../04-di-anno/04-di-anno.iml" filepath="$PROJECT_DIR$/../04-di-anno/04-di-anno.iml" />
+    </modules>
+  </component>
+</project>
