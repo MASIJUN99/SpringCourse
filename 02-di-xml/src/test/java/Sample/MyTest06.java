@@ -8,7 +8,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class MyTest06 {
     @Test
     public void test01(){
-        String config = "/c06/spring-total.xml";
+        String config = "/c06/total.xml";
         ApplicationContext ac = new ClassPathXmlApplicationContext(config);
         Student student = (Student) ac.getBean("myStudent");
         System.out.println(student);
