@@ -1,4 +1,4 @@
-package com.Sample.c06;
+package com.Sample.c07;
 
 
 import org.springframework.beans.factory.annotation.Value;
@@ -20,8 +20,11 @@ public class Student {
      *
      * 位置： 1. 在属性定义的上面，无需set方法，推荐
      *       2. 在set方法的上面
+     *
+     * 属性： 1. 使用byName方式，添加属性name属性
+     *       2. 使用byType方式，默认方式
      */
-    @Resource  // need to maven javax package
+    @Resource(name = "mySchool")
     private School school;
 
 
