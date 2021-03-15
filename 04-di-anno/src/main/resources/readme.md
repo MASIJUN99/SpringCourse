@@ -13,3 +13,10 @@
 3. 直接导入父包（不推荐）
 
    `<context:component-scan base-package="parents"/>`
+
+## 准备文件 - c08
+
+后缀为`.properties`的文件
+
+在spring配置文件applicationContext.xml中添加标签，语法如下
+
