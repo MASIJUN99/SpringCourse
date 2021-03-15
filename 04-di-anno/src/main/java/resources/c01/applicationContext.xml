@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--
+    声明组件扫描器，组件就是Java对象，即找Java对象用的
+    base-package: 指定注解在你的项目中的包名
+    component-scan: spring会扫描遍历base-package指定的包
+    把包中和子包总的所有类寻找，找到类中的注解，按照注解的功能创建对象，或者给属性赋值。
+
+    加入了component-scan后配置文件属性上会添加两个新的约束文件
+    1.spring-context.xsd
+    2.给这个新的约束文件起一个命名空间的名称，即http://www.springframework.org/schema/context
+    -->
+
+    <context:component-scan base-package="com.Sample.c01"/>
+
+</beans>
