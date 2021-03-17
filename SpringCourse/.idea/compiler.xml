@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="02-di-xml" />
+        <module name="05-homework2" />
         <module name="04-di-anno" />
         <module name="01-Hello-Spring" />
         <module name="03-homework" />
@@ -16,7 +17,9 @@
       <module name="01-Hello-Spring" target="1.7" />
       <module name="02-di-xml" target="15" />
       <module name="03-homework" target="1.7" />
+      <module name="03-homework1" target="1.7" />
       <module name="04-di-anno" target="1.8" />
+      <module name="05-homework2" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

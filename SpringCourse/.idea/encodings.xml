@@ -2,7 +2,9 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/../01-Hello-Spring/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../01-Hello-Spring/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../03-homework/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../04-di-anno/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../05-homework2/src/main/java" charset="UTF-8" />
   </component>
 </project>
