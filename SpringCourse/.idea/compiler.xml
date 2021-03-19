@@ -11,6 +11,7 @@
         <module name="04-di-anno" />
         <module name="01-Hello-Spring" />
         <module name="03-homework" />
+        <module name="07-AOP-aspectJ" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -20,6 +21,7 @@
       <module name="03-homework1" target="1.7" />
       <module name="04-di-anno" target="1.8" />
       <module name="05-homework2" target="1.7" />
+      <module name="07-AOP-aspectJ" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

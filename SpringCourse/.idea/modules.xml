@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/../04-di-anno/04-di-anno.iml" filepath="$PROJECT_DIR$/../04-di-anno/04-di-anno.iml" />
       <module fileurl="file://$PROJECT_DIR$/../05-homework2/05-homework2.iml" filepath="$PROJECT_DIR$/../05-homework2/05-homework2.iml" />
       <module fileurl="file://$PROJECT_DIR$/06-AOP-leadin/06-AOP-leadin.iml" filepath="$PROJECT_DIR$/06-AOP-leadin/06-AOP-leadin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../07-AOP-aspectJ/07-AOP-aspectJ.iml" filepath="$PROJECT_DIR$/../07-AOP-aspectJ/07-AOP-aspectJ.iml" />
     </modules>
   </component>
 </project>
