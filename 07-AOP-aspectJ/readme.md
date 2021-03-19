@@ -38,7 +38,7 @@
 
 ### 六个注解
 
-1. @Before - c01
+1. @Before
 2. @AfterReturning
 3. @Around
 4. @AfterThrowing
@@ -57,4 +57,34 @@ Before前置通知，方法有JoinPoint参数
 
 Before前置通知，使用JoinPoint参数
 
+#### c03
 
+AfterReturning后置通知
+
+虽然AfterReturning增强处理可以访问到方法的返回值，但它不可以改变目标方法的返回值。
+
+#### c04
+
+Around环绕通知，多用于事务
+
+#### c05
+
+AfterThrowing异常通知，出现异常时执行。
+
+#### c06
+
+After最终通知，总是会执行，代表程序运行完毕，常用来清理内存，类似析构。
+
+#### c07
+
+Pointer定义和管理切入点
+
+#### c08
+
+展示了没有接口类的动态代理，使用的是CGLIB动态代理，spring会自动使用CGLIB
+
+#### c09
+
+展示了有接口的情况下使用CGLIB代理方式
+
+效率会稍高一点的

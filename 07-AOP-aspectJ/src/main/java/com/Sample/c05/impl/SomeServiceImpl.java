@@ -1,8 +1,7 @@
-package com.Sample.c03.impl;
+package com.Sample.c05.impl;
 
-import com.Sample.c03.SomeService;
-import com.Sample.c03.Student;
 
+import com.Sample.c05.SomeService;
 
 // 目标类
 public class SomeServiceImpl implements SomeService {
@@ -19,11 +18,15 @@ public class SomeServiceImpl implements SomeService {
     }
 
     @Override
-    public Student doOther2(String name, Integer age){
-        Student student = new Student();
-        student.setAge(age);
-        student.setName(name);
-
-        return student;
+    public String doFirst(String name, Integer age) {
+        System.out.println("目标方法doFirst()");
+        return "doFirst";
     }
+
+    @Override
+    public String doSecond(String name, Integer age) {
+        System.out.println("目标方法doSecond()");
+        return "doFirst";
+    }
+
 }

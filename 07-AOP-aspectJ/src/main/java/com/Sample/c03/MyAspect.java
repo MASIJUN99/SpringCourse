@@ -56,4 +56,17 @@ public class MyAspect {
 
     }
 
+    @AfterReturning(value = "execution(* *..SomeServiceImpl.doOther2(..))", returning = "res")
+    public void myAfterReturning2(Object res) {
+        // Object res:是目标方法执行后的返回值，根据返回值做你的切面的功能处理
+        System.out.println("后置通知：在目标方法之后执行，获取的返回值是：" + res);
+
+        // 修改res内容、属性值，会不会影响调用结果。
+        Student student = new Student();
+        student.setName("xiaoma");
+        student.setAge(18);
+        res = student;
+    }
+
+
 }
