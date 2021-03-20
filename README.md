@@ -236,3 +236,183 @@ Factory创建需要读取主配置文件
 3. dao对象
 
 需要学习的就是上面三个对象的创建语法。使用xml的`<bean>`标签。
+
+## Spring事务处理
+
+### 先回答几个问题
+
+1. Q1：什么是事务
+
+   A1：
+
+   <font color=white>事务指一组sql语句的集合，集合中有多条sql语句。
+
+   我们希望集合中的sql语句都是执行的，或者都是不执行的。
+
+   其实就是sql语句作为一个整体来执行。</font>
+
+2. Q2：在什么时候用事务
+
+   A2：
+
+   <font color=white>当我的操作涉及到多个表或者是多个sql语句的操作时。
+
+   需要保证这些语句都执行才能完成功能，或者都不执行，就可以用事务。
+
+   在Java代码中写程序、控制事务，此时这个sql语句放在dao中，在Service使用这个事务。</font>
+
+3. 使用jdbc访问数据库和mybatis访问数据库怎么处理事务
+
+   A3：
+
+   <font color=white>jdbc访问数据库，处理事务是
+
+    Connection conn;
+
+   conn.commit();
+
+   conn.rollback();
+
+   若用mybatis访问数据库，处理事务是
+
+    SqlSession.commit();
+
+    SqlSession.rollback();
+
+   若用hibernate访问数据库，处理事务是
+
+   Session.commit();
+
+   Session.rollback();</font>
+
+4. Q4：上述问题事务处理方式有什么不足
+
+   A4：
+
+   <font color=white>1. 不同的数据库，访问技术、处理方法不同，需要学会多个访问方法。</font>
+
+   <font color=white>2. 需要掌握多种数据库处理事务的处理逻辑。</font>
+
+   <font color=white>3. 需要张悟不同数据库处理事务的多种方法。</font>
+
+   <font color=white>总结，不同数据库的访问技术不同，有着不同的个处理逻辑和技术。</font>
+
+5. Q5：怎么解决不足
+
+   A5：
+
+   <font color=white>Spring提供一种处理事务的统一模型，能使用统一的步骤来完成多种不同的数据库的访问方法。</font>
+
+6. 处理事务需要什么信息，怎么做，做什么
+
+   A6：
+
+   <font color=white>Spring处理事物的模型，使用步骤都是固定的。</font>
+
+   <font color=white>1. 事务内部提交、回滚都是用的spring事务管理器，代替commit和rollback。</font>
+
+   <font color=white>2. 你的业务方法是什么类型，需要声明你的事务类型，有五个隔离级别
+
+    隔离级别以ISOLATION_开头，形如ISOLATION_xxx</font>
+
+   <font color=white>i. DEFAULT：采用DB默认隔离级别，MySql使用READ，Oracle使用CoMMITTED。</font>
+
+   <font color=white>ii. READ_UNCOMMITTED：读未提交。未解决任何并发问题。</font>
+
+   <font color=white>iii. READ_COMMITTED：读已提交。解决脏读，存在不可重复读与幻读。</font>
+
+   <font color=white>iv. REPEATABLE_READ：可重复读。解决脏读、不可重复读，存在幻读。</font>
+
+   <font color=white>v. SERIALIZABLE：串行化，不存在并发问题。</font>
+
+   <font color=white>3. 事务超时时间，超过时间就回滚事务。</font>
+
+   <font color=white>4. 事务的传播行为，控制业务方法是不是有事务的，是什么样的事务
+
+    传播行为一共有7个，表示业务调用时，事务在方法之间是如何使用的。</font>
+
+   <font color=white>传播行为以PROPAGATION_开头，形如PROPAGATION_xxx</font>
+
+   <font color=white>5. spring提交事务、回滚事务的时机</font>
+
+   <font color=white>i. 当你的业务方法执行成功，没有异常抛出，自动执行事务管理器commit</font>
+
+   <font color=white>ii. 当你的业务方法运行期间有运行时异常抛出或ERROR，自动执行事务管理器rollback</font>
+
+   <font color=white>iii. 当你的业务方法抛出非运行时异常，主要是受查异常，提交事务</font>
+
+总结：
+1. 管办事务的是事务管理器
+2. spring的事务是一个统一的模型
+
+    1. 指定要使用的事务管理器的实现类，使用`<bean>`
+    2. 指定哪些类和哪些方法需要加入事务功能
+    3. 指定方法的隔离级别、传播行为和超时
+
+### 买卖商品例子
+
+详见项目09
+
+#### AOP增加事务
+
+1. [注解方案](#@Transactional)：适合中小项目使用。
+
+    spring框架自己用AOP实现业务方法增加事务的功能，使用`@Transactional`注解增加事务。
+
+    `@Transactional`是spring框架的注解，放在public方法之上；
+
+    可以给注解的属性赋值，表示隔离级别、传播行为、异常信息等。
+
+2. [aspectJ框架](#aspectJ框架)：适合大型项目
+
+    大型项目很多类、方法，需要配置大量事务时，使用aspectJ框架的功能，在spring配置文件中，声明类、方法需要的事务。
+
+    这种方式业务方和事务配置是完全分离的。
+
+
+#### @Transactional
+
+属性：
+1. `propagation` 用于设置事务传播属性。该属性类型为Propagation枚举，默认值为Propagation.REQUIRED
+2. `isolation` 用于设置事务的隔离级别。该属性类型为Isolation枚举，默认值为Isolation.DEFAULT
+3. `readOnly` 用于设置该方法对数据库的操作是否是只读的。该属性类型为boolean，默认值为false
+4. `timeout` 用于设置本操作与数据库连接的超时时限。单位为秒，该属性类型为int，默认值为-1，即没有时限
+5. `rollbackFor` 用于指定需要回滚的异常类。该属性类型为Class[]，默认值为空数组。当然，若只有一个异常类时，可以不用数组类型
+6. `rollbackForClassName` 用于指定需要回滚的异常类类名。该属性类型为String[]，默认值为空数组。当然，若只有一个异常类时，可以不用数组类型
+7. `noRollbackFor` 用于指定不需要回滚的异常类。该属性类型为Class[]，默认值为空数组。当然，若只有一个异常类时，可以不用数组类型
+8. `noRollbackForClassName` 用于指定不需要回滚的异常类。该属性类型为String[]，默认值为空数组。当然，若只有一个异常类时，可以不用数组类型
+
+使用步骤：
+1. 声明事务管理器对象
+```xml
+<bean id="xx" class="DataSourceTransactionManager">
+    <property name="dataSource" ref="dataSource"/>
+</bean>
+```
+2. 开启事务注解驱动。
+
+    spring会使用aop机制，去创建注解所在的类的代理对象，给方法加入事务功能。
+
+    spring在业务方法执行之前，先开启事务，在业务方法之后提交或回滚事务，使用的是AOP环绕通知方法。
+
+#### aspectJ框架
+
+实现步骤（均是在xml文件中完成）：
+1. 加入aspectJ依赖
+```xml
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-aspects</artifactId>
+    <version>5.3.4</version>
+</dependency>
+```
+2. 声明事务管理器对象，即DataSourceTransactionManager
+```xml
+<bean id="xx" class="DataSourceTransactionManager">
+    <property name="dataSource" ref="dataSource"/>
+</bean>
+```
+3. 声明方法需要的事务类型、事务属性（隔离级别、传播行为、超时...）
+
+4. 配置aop，指定哪些哪类需要创建代理。
+
