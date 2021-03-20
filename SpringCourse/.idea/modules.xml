@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/../05-homework2/05-homework2.iml" filepath="$PROJECT_DIR$/../05-homework2/05-homework2.iml" />
       <module fileurl="file://$PROJECT_DIR$/06-AOP-leadin/06-AOP-leadin.iml" filepath="$PROJECT_DIR$/06-AOP-leadin/06-AOP-leadin.iml" />
       <module fileurl="file://$PROJECT_DIR$/../07-AOP-aspectJ/07-AOP-aspectJ.iml" filepath="$PROJECT_DIR$/../07-AOP-aspectJ/07-AOP-aspectJ.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../08-Spring-mybatis/08-Spring-mybatis.iml" filepath="$PROJECT_DIR$/../08-Spring-mybatis/08-Spring-mybatis.iml" />
     </modules>
   </component>
 </project>
