@@ -55,6 +55,7 @@ public class BuyGoodsServiceImpl implements BuyGoodsService {
         buyGood.setId(goodId);
         goodsDao.updateGoods(buyGood);
 
+        // 若将异常抛出放在最后，会发现表sale的id不是连续的，因为当中出现了回滚。
         // 读取商品信息
         Good good = goodsDao.selectGoods(goodId);
         if (good == null){

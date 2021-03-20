@@ -12,6 +12,7 @@
         <option value="$PROJECT_DIR$/../08-Spring-mybatis/pom.xml" />
         <option value="$PROJECT_DIR$/../09-spring-trans/pom.xml" />
         <option value="$PROJECT_DIR$/../10-spring-trans-anno/pom.xml" />
+        <option value="$PROJECT_DIR$/../11-spring-trans-aspectj/pom.xml" />
       </list>
     </option>
   </component>

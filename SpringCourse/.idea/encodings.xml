@@ -13,5 +13,6 @@
     <file url="file://$PROJECT_DIR$/../08-Spring-mybatis/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../09-spring-trans/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../10-spring-trans-anno/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../11-spring-trans-aspectj/src/main/java" charset="UTF-8" />
   </component>
 </project>

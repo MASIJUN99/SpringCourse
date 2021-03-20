@@ -12,6 +12,7 @@
       <module fileurl="file://$PROJECT_DIR$/../08-Spring-mybatis/08-Spring-mybatis.iml" filepath="$PROJECT_DIR$/../08-Spring-mybatis/08-Spring-mybatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/../09-spring-trans/09-spring-trans.iml" filepath="$PROJECT_DIR$/../09-spring-trans/09-spring-trans.iml" />
       <module fileurl="file://$PROJECT_DIR$/../10-spring-trans-anno/10-spring-trans-anno.iml" filepath="$PROJECT_DIR$/../10-spring-trans-anno/10-spring-trans-anno.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../11-spring-trans-aspectj/11-spring-trans-aspectj.iml" filepath="$PROJECT_DIR$/../11-spring-trans-aspectj/11-spring-trans-aspectj.iml" />
     </modules>
   </component>
 </project>
