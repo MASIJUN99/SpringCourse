@@ -29,3 +29,19 @@ spring和mybatis集成开发
 8. 创建测试类获取Service对象，通过Service调用dao完成访问。
 
 ### 文件结构
+```txt
+└─src
+   ├─main
+   │  ├─java
+   │  │  └─com
+   │  │      └─Sample
+   │  │          ├─dao
+   │  │          ├─domain
+   │  │          └─service
+   │  │              └─impl
+   │  └─resources
+   └─test
+       └─java
+           └─Sample
+```
+

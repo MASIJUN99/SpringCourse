@@ -5,9 +5,9 @@
 
 <configuration>
     <!-- mybatis输出日志 -->
-<!--    <settings>-->
-<!--        <setting name="logImpl" value="STDOUT_LOGGING"/>-->
-<!--    </settings>-->
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
 
     <!-- 设置别名 -->
     <typeAliases>

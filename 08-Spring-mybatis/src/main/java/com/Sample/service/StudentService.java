@@ -1,4 +1,4 @@
-package com.Sample.Service;
+package com.Sample.service;
 
 import com.Sample.domain.Student;
 

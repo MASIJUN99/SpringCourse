@@ -1,6 +1,6 @@
-package com.Sample.Service.impl;
+package com.Sample.service.impl;
 
-import com.Sample.Service.StudentService;
+import com.Sample.service.StudentService;
 import com.Sample.dao.StudentDao;
 import com.Sample.domain.Student;
 
