@@ -10,6 +10,8 @@
         <module name="08-Spring-mybatis" />
         <module name="03-homework" />
         <module name="05-homework2" />
+        <module name="09-spring-trans" />
+        <module name="10-spring-trans-anno" />
         <module name="04-di-anno" />
         <module name="01-Hello-Spring" />
         <module name="07-AOP-aspectJ" />
@@ -24,6 +26,9 @@
       <module name="05-homework2" target="1.7" />
       <module name="07-AOP-aspectJ" target="1.7" />
       <module name="08-Spring-mybatis" target="1.7" />
+      <module name="09-spring-trans" target="1.7" />
+      <module name="10-" target="1.7" />
+      <module name="10-spring-trans-anno" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

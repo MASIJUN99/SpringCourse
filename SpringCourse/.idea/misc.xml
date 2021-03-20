@@ -10,6 +10,8 @@
         <option value="$PROJECT_DIR$/../05-homework2/pom.xml" />
         <option value="$PROJECT_DIR$/../07-AOP-aspectJ/pom.xml" />
         <option value="$PROJECT_DIR$/../08-Spring-mybatis/pom.xml" />
+        <option value="$PROJECT_DIR$/../09-spring-trans/pom.xml" />
+        <option value="$PROJECT_DIR$/../10-spring-trans-anno/pom.xml" />
       </list>
     </option>
   </component>
