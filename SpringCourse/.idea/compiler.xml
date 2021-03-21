@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="02-di-xml" />
         <module name="08-Spring-mybatis" />
+        <module name="12-spring-web" />
         <module name="03-homework" />
         <module name="05-homework2" />
         <module name="09-spring-trans" />
@@ -26,11 +27,13 @@
       <module name="04-di-anno" target="1.8" />
       <module name="05-homework2" target="1.7" />
       <module name="07-AOP-aspectJ" target="1.7" />
-      <module name="08-Spring-mybatis" target="1.7" />
+      <module name="08-Spring-mybatis" target="1.8" />
       <module name="09-spring-trans" target="1.7" />
       <module name="10-" target="1.7" />
       <module name="10-spring-trans-anno" target="1.7" />
       <module name="11-spring-trans-aspectj" target="1.7" />
+      <module name="12-spring-web" target="1.8" />
+      <module name="untitled" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

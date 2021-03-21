@@ -13,6 +13,7 @@
       <module fileurl="file://$PROJECT_DIR$/../09-spring-trans/09-spring-trans.iml" filepath="$PROJECT_DIR$/../09-spring-trans/09-spring-trans.iml" />
       <module fileurl="file://$PROJECT_DIR$/../10-spring-trans-anno/10-spring-trans-anno.iml" filepath="$PROJECT_DIR$/../10-spring-trans-anno/10-spring-trans-anno.iml" />
       <module fileurl="file://$PROJECT_DIR$/../11-spring-trans-aspectj/11-spring-trans-aspectj.iml" filepath="$PROJECT_DIR$/../11-spring-trans-aspectj/11-spring-trans-aspectj.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../12-spring-web/12-spring-web.iml" filepath="$PROJECT_DIR$/../12-spring-web/12-spring-web.iml" />
     </modules>
   </component>
 </project>

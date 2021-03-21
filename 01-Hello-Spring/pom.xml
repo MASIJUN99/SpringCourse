@@ -23,6 +23,12 @@
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
       <version>5.3.4</version>
+        <exclusions>
+            <exclusion>
+                <artifactId>spring-aop</artifactId>
+                <groupId>org.springframework</groupId>
+            </exclusion>
+        </exclusions>
     </dependency>
 
     <dependency>

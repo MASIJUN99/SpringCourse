@@ -1,4 +1,4 @@
-## 09-Spring-trans
+## 10-Spring-trans
 
 ### 实现步骤
 
@@ -25,6 +25,21 @@
 通过增加事务来实现回归。
 
 AOP + 功能 + 事务的模式来解决，通过AOP方法增加事务。
+
+### 注解
+
+1. 声明事务管理器对象
+```xml
+<bean id="xx" class="DataSourceTransactionManager">
+    <property name="dataSource" ref="dataSource"/>
+</bean>
+```
+2. 开启事务注解驱动。
+
+   spring会使用aop机制，去创建注解所在的类的代理对象，给方法加入事务功能。
+
+   spring在业务方法执行之前，先开启事务，在业务方法之后提交或回滚事务，使用的是AOP环绕通知方法。
+
 
 
 
