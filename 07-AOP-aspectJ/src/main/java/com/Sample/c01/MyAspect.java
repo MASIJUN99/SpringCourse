@@ -41,35 +41,43 @@ public class MyAspect {
     }
 
 
-
     // 写法1
-//    @Before(value="execution(public void com.Sample.c01.impl.SomeServiceImpl.doSome(String, Integer))")
-//    public void myBefore(){
-//        // 切面代码
-//        System.out.println("1：前置通知切面，执行时间为：" + new Date());
-//    }
+    // @Before(value = "execution(public void com.Sample.c01.impl.SomeServiceImpl.doSome(String, Integer))")
+    //
+    // public void myBefore() {
+    //     // 切面代码
+    //     System.out.println("1：前置通知切面，执行时间为：" + new Date());
+    // }
+    //
     // 写法2
-//    @Before(value="execution(void com.Sample.c01.impl.SomeServiceImpl.doSome(String, Integer))")
-//    public void myBefore(){
-//        // 切面代码
-//        System.out.println("2：前置通知切面，执行时间为：" + new Date());
-//    }
+    // @Before(value = "execution(void com.Sample.c01.impl.SomeServiceImpl.doSome(String, Integer))")
+    //
+    // public void myBefore() {
+    //     // 切面代码
+    //     System.out.println("2：前置通知切面，执行时间为：" + new Date());
+    // }
+    //
     // 写法3
-//    @Before(value="execution(void *..SomeServiceImpl.doSome(String, Integer))")
-//    public void myBefore(){
-//        // 切面代码
-//        System.out.println("3：前置通知切面，执行时间为：" + new Date());
-//    }
+    // @Before(value = "execution(void *..SomeServiceImpl.doSome(String, Integer))")
+    //
+    // public void myBefore() {
+    //     // 切面代码
+    //     System.out.println("3：前置通知切面，执行时间为：" + new Date());
+    // }
+    //
     // 写法4
-//    @Before(value="execution(* *..SomeServiceImpl.doSome(..))")
-//    public void myBefore(){
-//        // 切面代码
-//        System.out.println("4：前置通知切面，执行时间为：" + new Date());
-//    }
+    // @Before(value = "execution(* *..SomeServiceImpl.doSome(..))")
+    //
+    // public void myBefore() {
+    //     // 切面代码
+    //     System.out.println("4：前置通知切面，执行时间为：" + new Date());
+    // }
+    //
     // 写法5
-//    @Before(value="execution(* *..SomeServiceImpl.do*(..))")
-//    public void myBefore2(){
-//        // 切面代码
-//        System.out.println("5：前置通知切面，执行时间为：" + new Date());
-//    }
+    // @Before(value = "execution(* *..SomeServiceImpl.do*(..))")
+    //
+    // public void myBefore2() {
+    //     // 切面代码
+    //     System.out.println("5：前置通知切面，执行时间为：" + new Date());
+    // }
 }

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <!-- mybatis输出日志 -->
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+
+    <!-- 设置别名 -->
+    <typeAliases>
+        <package name="com.Sample.domain"/>
+    </typeAliases>
+
+    <!-- sql mapper（sql映射文件）的位置 -->
+    <mappers>
+        <!-- name是包名，包中的mapper.xml一次全部加载 -->
+        <package name="com.Sample.dao"/>
+        <!-- <mapper resource="com.Sample.dao"/> -->
+    </mappers>
+
+</configuration>

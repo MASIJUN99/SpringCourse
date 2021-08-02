@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+
+    <!-- 声明数据源DataSource 来连接数据库 -->
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+    <bean id="dataSource"
+          class="com.alibaba.druid.pool.DruidDataSource"
+          init-method="init"
+          destroy-method="close">
+        <!-- set注入DruidDataSource 连接数据库信息 -->
+        <property name="url" value="${jdbc.url}" />
+        <property name="username" value="${jdbc.username}" />
+        <property name="password" value="${jdbc.password}" />
+        <property name="maxActive" value="${jdbc.maxActive}"/>
+    </bean>
+
+
+
+    <!-- 声明mybatis中所提供的SqlSessionFactoryBean类，这个类内部创建SqlSessionFactory -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!-- set注入 把数据库连接池给了dataSource属性 -->
+        <property name="dataSource" ref="dataSource"/>
+        <!-- mybatis主配置文件的位置
+             configLocation属性是Resource类型，读取配置文件
+             他的赋值，使用value指定文件路径，用classpath:表示文件位置
+        -->
+        <property name="configLocation" value="classpath:mybatis.xml"/>
+
+    </bean>
+
+
+
+    <!-- 创建dao对象，使用SqlSession的getMapper -->
+    <!-- MapperScannerConfigurer：在内部调用getMapper()生成每个dao接口代理对象 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!-- 指定SqlSession对象的id -->
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+        <!-- 指定包名，包名是dao接口所在的包名
+             MapperScannerConfigurer会扫描这个包中所有的接口，把每个接口都执行一次getMapper()方法
+             得到每个接口的dao对象
+             创建好的dao对象，是放在spring容器中的
+        -->
+        <property name="basePackage" value="com.Sample.dao"/>
+    </bean>
+
+
+
+    <!-- 创建Service对象 -->
+    <bean id="buyGoodsService" class="com.Sample.service.impl.BuyGoodsServiceImpl">
+        <property name="goodsDao" ref="goodsDao"/>
+        <property name="salesDao" ref="salesDao"/>
+    </bean>
+
+
+
+    <!-- 声明式事务处理：和源代码完全分离的 -->
+    <!-- 1. 声明事务管理器对象 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+
+    <!-- 2. 声明业务方法的事务属性（隔离级别、传播行为、超时） -->
+    <tx:advice id="myAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method
+                    name="buy"
+                    propagation="REQUIRED"
+                    isolation="DEFAULT"
+                    rollback-for="java.lang.NullPointerException, com.Sample.exception.NotEnoughException"
+            />
+        </tx:attributes>
+    </tx:advice>
+
+    <!-- 配置AOP -->
+    <aop:config>
+        <!-- 先配置切入点表达式 -->
+        <aop:pointcut id="servicePt" expression="execution(* *..service.*ServiceImpl(..))"/>
+        <!-- 配置增强器 -->
+        <aop:advisor advice-ref="myAdvice" pointcut-ref="servicePt"/>
+    </aop:config>
+
+
+
+</beans>

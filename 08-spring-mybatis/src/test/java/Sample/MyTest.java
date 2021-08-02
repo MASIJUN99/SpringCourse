@@ -12,7 +12,6 @@ import java.util.List;
 public class MyTest {
     @Test
     public void testSpring() {
-
         // 检验是否成功创建对象
         String config = "/applicationContext.xml";
         ApplicationContext ac = new ClassPathXmlApplicationContext(config);

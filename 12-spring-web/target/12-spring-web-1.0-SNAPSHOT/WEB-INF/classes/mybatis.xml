@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+     <!--设置别名-->
+    <typeAliases>
+        <!--name:实体类所在的包名
+            表示com.bjpowernode.domain包中的列名就是别名
+            你可以使用Student表示com.bjpowenrode.domain.Student
+        -->
+        <package name="com.Sample.domain"/>
+    </typeAliases>
+
+
+    <!-- sql mapper(sql映射文件)的位置-->
+    <mappers>
+        <!--
+          name：是包名， 这个包中的所有mapper.xml一次都能加载
+        -->
+        <package name="com.Sample.dao"/>
+    </mappers>
+</configuration>
